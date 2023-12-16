@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://8w1ynq4vfrhg"]
+
+[ext_resource type="Script" path="res://UIIS/End_Game.gd" id="1_ww1hg"]
+[ext_resource type="Shader" path="res://shaders/Background.gdshader" id="2_aqvug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stusi"]
+shader = ExtResource("2_aqvug")
+shader_parameter/TWOPI = 5.283
+shader_parameter/NUM_EXPLOSIONS = 10.0
+shader_parameter/NUM_PARTICLES = 75.0
+shader_parameter/MOD3 = Vector3(52.103, 15.114, 12.138)
+
+[sub_resource type="Theme" id="Theme_pu2lr"]
+default_font_size = 76
+Label/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3q6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2simx"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok7eq"]
+bg_color = Color(0.00392157, 0.00392157, 0.00392157, 0)
+corner_radius_top_left = 82
+corner_radius_top_right = 34
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmxko"]
+bg_color = Color(0.0156863, 0.0156863, 0.0156863, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2c1u"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 0.0117647)
+
+[sub_resource type="Theme" id="Theme_uxmwf"]
+default_font_size = 24
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_c3q6f")
+Button/styles/focus = SubResource("StyleBoxFlat_2simx")
+Button/styles/hover = SubResource("StyleBoxFlat_ok7eq")
+Button/styles/normal = SubResource("StyleBoxFlat_pmxko")
+Button/styles/pressed = SubResource("StyleBoxFlat_a2c1u")
+
+[node name="End_Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ww1hg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_stusi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.160784)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 108.0
+grow_horizontal = 2
+theme = SubResource("Theme_pu2lr")
+text = "Congrats YoU WiN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.5
+offset_right = 50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Again ?"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 27.0
+offset_right = 68.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uxmwf")
+text = "Quit"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

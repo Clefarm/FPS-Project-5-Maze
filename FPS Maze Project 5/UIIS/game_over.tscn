@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://c36unu68wtp2g"]
+
+[ext_resource type="Script" path="res://UIIS/game_over.gd" id="1_k32vx"]
+
+[sub_resource type="Theme" id="Theme_lupvs"]
+default_font_size = 63
+Label/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20u1x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah55u"]
+bg_color = Color(0.0156863, 0.0156863, 0.0156863, 0.054902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg5f0"]
+bg_color = Color(0.0470588, 0.0470588, 0.0470588, 0.360784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6k3s"]
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 0.258824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leemo"]
+bg_color = Color(0.0352941, 0.0352941, 0.0352941, 0.211765)
+
+[sub_resource type="Theme" id="Theme_70dry"]
+default_font_size = 40
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_20u1x")
+Button/styles/focus = SubResource("StyleBoxFlat_ah55u")
+Button/styles/hover = SubResource("StyleBoxFlat_sg5f0")
+Button/styles/normal = SubResource("StyleBoxFlat_k6k3s")
+Button/styles/pressed = SubResource("StyleBoxFlat_leemo")
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k32vx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0117647, 0.0117647, 0.0117647, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -165.0
+offset_right = -8.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lupvs")
+text = "You Obviously Didn't Make It"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -24.0
+offset_right = 75.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_70dry")
+text = "RESTART"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://yau4imuc641c"]
+
+[ext_resource type="PackedScene" uid="uid://b1yleqbb8tc7x" path="res://Game/Maze.tscn" id="1_7xf4m"]
+[ext_resource type="PackedScene" uid="uid://ycdwti4hlg5d" path="res://UIIS/Main_Menu.tscn" id="2_moibc"]
+[ext_resource type="PackedScene" uid="uid://do7pdpjxteg8e" path="res://UIIS/HUD.tscn" id="3_rhawu"]
+[ext_resource type="PackedScene" uid="uid://c36unu68wtp2g" path="res://UIIS/game_over.tscn" id="4_sejkg"]
+[ext_resource type="PackedScene" uid="uid://8w1ynq4vfrhg" path="res://UIIS/end_game.tscn" id="5_iipbm"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Main_Menu" parent="." instance=ExtResource("2_moibc")]
+
+[node name="Maze" parent="." instance=ExtResource("1_7xf4m")]
+
+[node name="HUD" parent="Maze" instance=ExtResource("3_rhawu")]
+
+[node name="Game_Over" parent="." instance=ExtResource("4_sejkg")]
+
+[node name="End_Game" parent="." instance=ExtResource("5_iipbm")]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://ycdwti4hlg5d"]
+
+[ext_resource type="Script" path="res://UIIS/Main_Menu.gd" id="1_hi6la"]
+
+[sub_resource type="Theme" id="Theme_4bdfl"]
+default_font_size = 108
+Label/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqonr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43ugc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8pt0"]
+bg_color = Color(0.0117647, 0.0117647, 0.0117647, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ju4ig"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fno8u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_ltowt"]
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_cqonr")
+Button/styles/focus = SubResource("StyleBoxFlat_43ugc")
+Button/styles/hover = SubResource("StyleBoxFlat_p8pt0")
+Button/styles/normal = SubResource("StyleBoxFlat_ju4ig")
+Button/styles/pressed = SubResource("StyleBoxFlat_fno8u")
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hi6la")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme = SubResource("Theme_4bdfl")
+text = "    FPS Maze"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -411.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "When the game starts, Turn 90 degrees LEFT and Look UP. Thats where you need to get to in order to win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme = SubResource("Theme_ltowt")
+text = "START"
+flat = true
+
+[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
